@@ -547,7 +547,7 @@ $CONFIGURE_OPTIONS"
 
     # Set the lib dir to `lib64` on **x86_64**
     # systems.
-    local append_default_libdir='yes'
+    local append_default_libdir='no'
     for option in $CONFIGURE_OPTIONS; do
       case "$option" in
         "--with-libdir"*) append_default_libdir='no' ;;
@@ -594,7 +594,8 @@ function build_error() {
     } >&3
 
     # Removes the prefix when the build fails.
-    if [ -z "$PHP_BUILD_DEBUG" ]; then
+
+    if [ -n "$PHP_BUILD_DEBUG" ]; then
         cleanup_abort > /dev/null
     fi
 }
