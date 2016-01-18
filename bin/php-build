@@ -547,7 +547,7 @@ $CONFIGURE_OPTIONS"
 
     # Set the lib dir to `lib64` on **x86_64**
     # systems.
-    local append_default_libdir='no'
+    local append_default_libdir='yes'
     for option in $CONFIGURE_OPTIONS; do
       case "$option" in
         "--with-libdir"*) append_default_libdir='no' ;;
